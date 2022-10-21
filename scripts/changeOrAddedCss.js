@@ -36,7 +36,7 @@ module.exports = (filePath) => {
       } else {
         // Attempt to delete any existing sourcemap.
         // We don't care if it fails or not.
-        fs.unlink(`${destinationCss}.map`);
+        fs.unlink(`${destinationCss}.map`, () => {});
 
         log(`'${filePath}' is finished.`);
       }
